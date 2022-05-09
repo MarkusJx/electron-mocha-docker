@@ -50,6 +50,6 @@ jobs:
       - name: Push image
         working-directory: ${{ env.IMAGE_VERSION }}
         run: |
-          IMAGE_ID=$REGISTRY/${{ github.repository }
+          IMAGE_ID=$REGISTRY/${{ github.repository }}
           docker tag $IMAGE_NAME $IMAGE_ID:$IMAGE_VERSION
           docker push $IMAGE_ID:$IMAGE_VERSION
