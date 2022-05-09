@@ -51,5 +51,7 @@ jobs:
         working-directory: ${{ env.IMAGE_VERSION }}
         run: |
           IMAGE_ID=$REGISTRY/${{ github.repository }}
+          # Change all uppercase to lowercase
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
           docker tag $IMAGE_NAME $IMAGE_ID:$IMAGE_VERSION
           docker push $IMAGE_ID:$IMAGE_VERSION
