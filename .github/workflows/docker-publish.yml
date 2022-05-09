@@ -33,6 +33,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Run dos2unix
+        working-directory: '16'
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install dos2unix
+          dos2unix docker-entrypoint.sh
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
         working-directory: '16'
