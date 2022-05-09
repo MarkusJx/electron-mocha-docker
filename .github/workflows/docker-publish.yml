@@ -38,7 +38,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get -y install dos2unix
-          dos2unix docker-entrypoint.sh
+          dos2unix docker-entrypoint.sh Dockerfile
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
         working-directory: '16'
