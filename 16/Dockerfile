@@ -1,4 +1,5 @@
 FROM snapcore/snapcraft:stable
+RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get dist-upgrade -y
